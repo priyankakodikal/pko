@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Ableton</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="../css/ableton.css">
+    </head>
+    <body>
+        <h2>ABLETON</h2>
+        <div class="menu-container">
+            <div class="menu-section">
+                <div class="menu-header">Ableton Live</div>
+                <div class="menu-content">
+                    <!-- Services content here -->
+                </div>
+            </div>
+            
+            <div class="menu-section">
+                <div class="menu-header">Max for Live</div>
+                <div class="menu-content">
+                    <div class="menu-item">
+                        <span class="menu-item-label">PRODUCTION:</span>
+                        <span class="menu-item-value">Hot Icarus & Tiny Studios</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="menu-item-label">PHOTOGRAPHY:</span>
+                        <span class="menu-item-value">Charlotte Ellis</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-section">
+                <div class="menu-header">Ableton Cloud</div>
+                <div class="menu-content">
+                    <!-- Links content here -->
+                </div>
+            </div>
+        </div>
+
+        <script src="./js/main.js"></script>
+
+        <script>
+            // Get all menu headers
+            const menuHeaders = document.querySelectorAll('.menu-header');
+            
+            // Add click event listener to each header
+            menuHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    // Get the content associated with this header
+                    const content = header.nextElementSibling;
+                    
+                    // If this content is already shown, hide it
+                    if (content.classList.contains('show')) {
+                        content.classList.remove('show');
+                        header.classList.remove('active');
+                    } else {
+                        // Hide all other contents
+                        document.querySelectorAll('.menu-content').forEach(c => {
+                            c.classList.remove('show');
+                        });
+                        document.querySelectorAll('.menu-header').forEach(h => {
+                            h.classList.remove('active');
+                        });
+                        
+                        // Show this content
+                        content.classList.add('show');
+                        header.classList.add('active');
+                    }
+                });
+            });
+        </script>
+        
+    </body> 
+</html>

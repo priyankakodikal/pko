@@ -1,0 +1,75 @@
+@import "main.css";
+
+.menu-container {
+    background-color: #1a1a1a;
+    color: white;
+    font-family: var(--font-1);
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.menu-section {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px 0;
+}
+
+.menu-section:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    user-select: none;
+    font-weight: 400;
+    transition: opacity 0.2s ease;
+}
+
+.menu-header:hover {
+    opacity: 0.8;
+}
+
+.menu-header::before {
+    content: '+';
+    margin-right: 10px;
+    font-size: 18px;
+    width: 20px;
+    display: inline-block;
+}
+
+.menu-section.active .menu-header::before {
+    content: '−';
+}
+
+.menu-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding-left: 30px;
+}
+
+.menu-section.active .menu-content {
+    max-height: 500px;
+    padding-top: 15px;
+}
+
+.menu-item {
+    margin: 5px 0;
+    display: flex;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.menu-item-label {
+    color: rgba(255, 255, 255, 0.7);
+    margin-right: 10px;
+    min-width: 120px;
+}
+
+.menu-item-value {
+    color: white;
+}
