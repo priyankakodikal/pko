@@ -1,219 +1,250 @@
 
 /* @import must be at top of file, otherwise CSS will not work */
 @import url("//hello.myfonts.net/count/342cdb");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
 
-@font-face {
-  font-family: 'Monospace821BT-Roman';
-  src: url('webfonts/342CDB_0_0.eot');
-  src: url('webfonts/342CDB_0_0.eot?#iefix') format('embedded-opentype'), url('webfonts/342CDB_0_0.woff2') format('woff2'), url('webfonts/342CDB_0_0.woff') format('woff'), url('webfonts/342CDB_0_0.ttf') format('truetype');
-}
+:root {
 
-html,
-body {
-  margin: 50;
-  font-family: 'Monospace821BT-Roman', sans-serif;
-  font-weight: 300;
-  line-height: 1.6;
-  color: #000;
-  background-color: #ffffff;
+  --font-1    : "Space Grotesk", sans-serif;
+  --font-2    : 'Inter', serif;
+
+  /* monospace
+  */
+  --font-mono : Cutive Mono, "Andale Mono", Courier, "Courier New", monospace;
 }
 
 * {
-  box-sizing: border-box;
-}
-
-#title section {
-  width: 100%;
   margin: 0;
-  max-width: 800px;
-}
-
-#title {
-  padding: 80px;
-  background-color: #ffffff;
-  /* For browsers that do not support gradients */
-  /* background-image: linear-gradient(to right, rgba(79,35,208,0), rgba(79,35,208,1)); */
-}
-
-#title h1 {
-  font-size: 72px;
-  display: inline-block;
-  color: #000;
-  background-color: #faff00;
-  padding: 0.1em;
-  margin: 0;
-}
-
-#title h3 {
-  font-size: 20px;
-  font-weight: 300;
-  color: #000;
-  background-color: #faff00;
-  padding: 0.1em;
-  margin: 0;
-  display: inline-block;
-}
-
-#sub{
-  font-size: 11px;
-
-}
-
-#subh h2{
-  font-size: 1.0em;
-  color: #000;
-  padding: 0.1em;
-  margin: 0;
-
-}
-#wrapper {
-  padding: 80px;
-}
-
-strong {
-  font-weight: 400;
-}
-.grid-containerPortrait {
-  display: grid;
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
-  grid-template-columns: 800px;
-  align-content: space-evenly;
-}
-
-.griditemPortrait {
-  grid-gap: 5px 5px;
-}
-.grid-containerMix {
-  display: grid;
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
-  grid-template-columns: 400px 400px;
-  grid-template-rows: 270px 600px;
-  align-content: space-evenly;
-}
-.grid-containerLandscape {
-  display: grid;
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
-  grid-template-columns: 800px;
-  align-content: space-evenly;
-}
-
-.griditemLandscape {
-  grid-gap: 5px 5px;
-}
-
-@media screen and (min-width: 1400px) {
-  .grid-container {
-    display: grid;
-    grid-column-gap: 5px;
-    grid-row-gap: 5px;
-    grid-template-columns: 400px 400px 400px;
-    align-content: space-evenly;
-  }
-  
-  .griditem {
-    grid-gap: 10px 10px;
-  }
-  }
-
-.grid-container {
-  display: grid;
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
-  grid-template-columns: 400px 400px;
-  align-content: space-evenly;
-}
-
-.griditem {
-  grid-gap: 5px 5px;
-}
-
-@media only screen and (max-width: 600px) {
-  .grid-container {
-    display: grid;
-    grid-column-gap: 2px;
-    grid-row-gap: 2px;
-    grid-template-columns: 400px;
-    align-content: space-evenly;
-  }
-  
-  .griditem {
-    grid-gap: 5px 5px;
-  }
-
-}
-.griditem a{
-  display:none;
-  border:none;
-  background-color:none;
   padding: 0;
-  }
-  
-  .griditem a:hover{
-    display:none;
-    border:none;
-    background-color:none;
-    padding: 0;
-    }
-#frames {
-  overflow-y: hidden;
-  overflow-x: hidden;
-  /* Hide vertical scrollbar */
+  box-sizing: border-box;
+  font-family: var(--font-1);
+  font-weight: 300;
 }
 
-#wrapper h1 {
-  font-size: 1.2em;
-  line-height: 1.6em;
-  display: inline-block;
-  margin: 0 0 1em 0;
-  color: #000;
-  background-color: #faff00;
-  padding: 0.1em;
+body {
+  background: #1a1a1a;
+  color: #eee;
 }
 
-#wrapper section {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 0 80px 0;
+.nav-container {
+  position: fixed;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
 }
 
-#wrapper section h2 {
-  font-size: 1.0em;
-  color: #000;
-  background-color: #faff00;
-  padding: 0.1em;
-  margin: 0;
+.nav-item {
+  position: relative;
+  height: 40px; /* Increased height for better spacing */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
 }
 
-#wrapper section p {
-  margin: 0 0 1em 0;
+.nav-line-container {
+  position: relative;
+  width: 40px;  /* Width of clickable area */
+  height: 14px; /* Height of clickable area */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 6px;  /* Creates space around the line */
 }
 
-#wrapper section ul {
-  list-style-type: square;
-  color: #000;
+.nav-line {
+  width: 16px;  /* Exact width as specified */
+  height: 2px;  /* Exact height as specified */
+  background: #888;
+  transition: all 0.3s ease;
+  pointer-events: none; /* Ensures the line doesn't interfere with hover */
 }
 
-#wrapper section ul li {
-  margin: 0 0 0.5em 0;
-}
-
-#wrapper section ul li:before {
-  content: "-";
+.nav-text {
   position: absolute;
-  margin: 0 0 0 -20px;
+  right: 45px;
+  color: #eee;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-size: 14px;
+  pointer-events: none; /* Prevents text from interfering with hover */
 }
 
-#wrapper section a {
-  color: #000;
-  border-bottom: 1px solid #000;
+/* Hover effect now applies to the container */
+.nav-item:hover .nav-line {
+  width: 32px; /* Double the original width */
+  background: #eee;
+}
+
+.nav-item:hover .nav-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.nav-item.active .nav-line {
+  width: 32px;
+  background: #00ff9d;
+}
+
+/* Rest of the styles remain the same */
+.main-content {
+  width: calc(100% - 100px);
+  margin-right: 100px;
+  padding: 3rem;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 4rem 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #eee;
+}
+
+h2 {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  line-height: 2rem;
+  letter-spacing: 0.1rem;
+  color: #eee;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: #252525;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  background: #333;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.project-headlines {
+  width: 100%;
+  padding: 0.3rem;
+  display: block;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skill-tag {
+  background: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+.contact-form {
+  max-width: 600px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #252525;
+  border: none;
+  border-radius: 4px;
+  color: #eee;
+}
+
+.contact-form button {
+  padding: 1rem 2rem;
+  background: #252525;
+  border: none;
+  border-radius: 4px;
+  color: #eee;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background: #2e2e2e;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+      right: 20px;
+  }
+
+  .main-content {
+      width: calc(100% - 60px);
+      margin-right: 60px;
+  }
+}
+
+/*--- links ---*/
+
+/* Link base styles */
+a {
+  color: #00ff9d;
   text-decoration: none;
+  background-image: linear-gradient(45deg, transparent 65%, #00ff9d 80%, transparent 90%),
+                    linear-gradient(135deg, transparent 5%, #9000ff 15%, transparent 25%),
+                    linear-gradient(135deg, transparent 45%, #0048ff 55%, transparent 65%),
+                    linear-gradient(45deg, transparent 25%, #ffdd00 35%, transparent 50%);
+  background-size: 200% 0.15em;
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  padding-bottom: -0.1em;
 }
 
-#wrapper section a:hover {
-  color: #000;
-  background-color: #faff00;
-  padding: 0.1em;
+/* Animated underline */
+a:hover {
+  animation: moveWave 5s linear infinite;
+}
+
+/* Wave animation keyframes */
+@keyframes moveWave {
+  0% {
+      background-position: 0 100%;
+  }
+  100% {
+      background-position: -200% 100%;
+  }
+}
+
+/*--- @media ---*/
+
+@media (min-width: 1200px) {
+  .main-content {
+    width: calc(100% - 400px);
+    margin-right: 60px;
+  }
 }
